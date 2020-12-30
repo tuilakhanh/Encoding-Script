@@ -33,22 +33,21 @@ def op_ed(clip_a: vs.VideoNode, clip_b: vs.VideoNode) -> vs.VideoNode:
 	clip = core.std.MaskedMerge(clip_b, clip_a, mask_fade)
 	return clip
 
-src_a = lvf.src(r'[VNFS] Steins;Gate 07 [BD][720p][v3].mkv')
+src_a = lvf.src(r'[VNFS] Steins;Gate 01 [BD][720p][v3].mkv')
 src_a = depth(src_a, 32)
 src_a = core.fmtc.resample(src_a, 1920, 1080, kernel = 'bilinear')
 src_a = depth(src_a, 10)
 
-src_b = lvf.src(r'[Beatrice-Raws] Steins;Gate [BDRip 1920x1080 x264 FLAC]\[Beatrice-Raws] Steins;Gate 07 [BDRip 1920x1080 x264 FLAC].mkv')
+src_b = lvf.src(r'[Beatrice-Raws] Steins;Gate [BDRip 1920x1080 x264 FLAC]\[Beatrice-Raws] Steins;Gate 01 [BDRip 1920x1080 x264 FLAC].mkv')
 
 signs = [
-(2592, 2625), (4939, 5058), (6178, 6200), 
-(8960, 9009), (11851, 11895), (13680, 13761),
-(15345, 15403), (26531, 26590), (26707, 26759),
-(30349, 30412)
+(1549, 1669), (2310, 2389), (5367, 5390),
+(9515, 9520), (13140, 13221), (18867, 19111),
+(30993, 31122), (31256, 31344)
 ]
 
 op_eds = [
-(2782, 4877), (31895, 34652)
+(15202, 17370), (31910, 34452)
 ]
 
 subtitles = hardsub(src_a, src_b)
